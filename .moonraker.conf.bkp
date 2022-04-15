@@ -1,63 +1,54 @@
 [server]
-host: 0.0.0.0
-port: 7125
-enable_debug_logging: False
-config_path: ~/klipper_config
-temperature_store_size: 600
-gcode_store_size: 1000
-log_path: /tmp
+host = 0.0.0.0
+port = 7125
+enable_debug_logging = False
+max_upload_size = 1024
+
+[file_manager]
+config_path = ~/klipper_config
+log_path = ~/klipper_logs
+enable_object_processing = False
 
 [authorization]
-force_logins: true
-
-cors_domains:
-  *.local
-  *.lan
-  *://app.fluidd.xyz
-  *://my.mainsail.xyz
-
-trusted_clients:
-  10.0.0.0/8
-  127.0.0.0/8
-  169.254.0.0/16
-  172.16.0.0/12
-  192.168.0.0/16
-  FE80::/10
-  ::1/128
-
-[history]
+force_logins = true
+cors_domains = 
+	*.local
+	*.lan
+	*://app.fluidd.xyz
+	*://my.mainsail.xyz
+trusted_clients = 
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
 
 [octoprint_compat]
 
+[history]
+
 [update_manager]
-enable_auto_refresh: True
+refresh_interval = 168
 
 [update_manager mainsail]
-type: web
-repo: mainsail-crew/mainsail
-path: ~/mainsail 
-
-#[update_manager client fluidd]
-#type: web
-#repo: cadriel/fluidd
-#path: ~/fluidd
+type = web
+channel = stable
+repo = mainsail-crew/mainsail
+path = ~/mainsail
 
 [update_manager client z_calibration]
-type: git_repo
-path: /home/pi/klipper_z_calibration
-origin: https://github.com/protoloft/klipper_z_calibration.git
-install_script: install.sh
+type = git_repo
+path = /home/pi/klipper_z_calibration
+origin = https://github.com/protoloft/klipper_z_calibration.git
+install_script = install.sh
 
 [update_manager KlipperScreen]
-type: git_repo
-path: ~/KlipperScreen
-origin: https://github.com/jordanruthe/KlipperScreen.git
-env: ~/.KlipperScreen-env/bin/python
-requirements: scripts/KlipperScreen-requirements.txt
-install_script: scripts/KlipperScreen-install.sh
+type = git_repo
+path = ~/KlipperScreen
+origin = https://github.com/jordanruthe/KlipperScreen.git
+env = ~/.KlipperScreen-env/bin/python
+requirements = scripts/KlipperScreen-requirements.txt
+install_script = scripts/KlipperScreen-install.sh
 
-#[update_manager timelapse]
-#type: git_repo
-#primary_branch: main
-#path: ~/moonraker-timelapse
-#origin: https://github.com/mainsail-crew/moonraker-timelapse.git
