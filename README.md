@@ -1,6 +1,10 @@
 # klipper_config_v2_464
 Voron 2.464 klipper config backup
 
+- Used Cmponent  
+   - Galileo Z Drive  
+   - Bontech LGX
+   - 
 - SuperSlicer 2.4  
 
 >Printer Custom G-Code 
